@@ -7,4 +7,8 @@ Rails.application.routes.draw do
   scope module: :todo_domain do
     resources :todos
   end
+
+  scope module: :user_domain do
+    post 'sign_in' => 'users#sign_in'
+  end
 end

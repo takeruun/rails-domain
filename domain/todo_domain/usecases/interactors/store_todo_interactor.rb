@@ -2,8 +2,6 @@ module TodoDomain
   module Usecases
     module Interactors
       class StoreTodoInteractor < ApplicationInteractor
-        include Interactor
-
         delegate :todo, to: :context, private: true
 
         def call
