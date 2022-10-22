@@ -10,5 +10,6 @@ Rails.application.routes.draw do
 
   scope module: :user_domain do
     post 'sign_in' => 'users#sign_in'
+    post 'sign_up' => 'users#sign_up'
   end
 end

@@ -11,6 +11,18 @@ module UserDomain
       end
     end
 
+    def sign_up
+      ctx = Usecases::SignUp.call(params: user_params, session: session)
+
+      if ctx.success?
+        session = ctx.session
+        render json: { message: 'ok' }
+      else
+        render json: {message: ctx.message}
+      end
+
+    end
+
     private
 
     def user_params
