@@ -6,7 +6,6 @@ module UserDomain
 
         def call
           UserDomain::User.store!(user)
-          puts user.id
         end
 
         def rollback; end
