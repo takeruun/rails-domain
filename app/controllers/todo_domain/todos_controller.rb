@@ -7,8 +7,9 @@ module TodoDomain
       ctx = Usecases::CreateTodo.call(params: todo_params, session: session)
 
       if ctx.success?
+        render json: ctx.todo, serializer: TodoSerializer
       else
-        
+        render json: {message: ctx.message}
       end
     end
 
