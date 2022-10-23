@@ -28,7 +28,10 @@ module App
     # config.middleware.use ActionDispatch::Cookies
 
     config.middleware.insert_before Rack::Head, ActionDispatch::Cookies
-    config.middleware.insert_after ActionDispatch::Cookies, ActionDispatch::Session::CacheStore
+    config.middleware.insert_after ActionDispatch::Cookies, ActionDispatch::Session::RedisStore,
+      servers: ["redis://redis:6379/0"],
+      expire_after: 5.minutes,
+      key: "_rails_domain"
   end
 end
 
