@@ -5,10 +5,7 @@ module UserDomain
         delegate :params, :user, :session, to: :context, private: true
 
         def call
-          if user.authenticate(params[:password])
-          else
-            context.fail!(message: 'パスワードが違います。')
-          end
+          context.fail!(message: 'パスワードが違います。') if user.authenticate(params[:password]).nil?
         end
       end
     end

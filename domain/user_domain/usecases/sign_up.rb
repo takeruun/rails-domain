@@ -4,8 +4,8 @@ module UserDomain
       include InteractorTransactional
 
       organize Interactors::CreateUserInteractor,
-                Interactors::StoreUserInteractor,
-                Interactors::UpdateSessionInteractor
+               Interactors::StoreUserInteractor,
+               Interactors::UpdateSessionInteractor
     end
   end
 end

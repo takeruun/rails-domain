@@ -8,9 +8,8 @@ module UserDomain
           UserDomain::User.store!(user)
         end
 
-        def rollback; end
-
-        private
+        def rollback
+        end
       end
     end
   end

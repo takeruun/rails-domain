@@ -4,9 +4,7 @@ module TodoDomain
       include InteractorTransactional
 
       organize Interactors::CreateTodoInteractor,
-                Interactors::StoreTodoInteractor
-
-      private
+               Interactors::StoreTodoInteractor
     end
   end
 end

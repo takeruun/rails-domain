@@ -1,26 +1,23 @@
 module UserDomain
   class UsersController < ApplicationController
     def sign_in
-      ctx = Usecases::SignIn.call(params: user_params, session: session)
+      ctx = Usecases::SignIn.call(params: user_params, session:)
 
       if ctx.success?
-        session = ctx.session
         render json: { message: 'ok' }
       else
-        render json: {message: ctx.message}
+        render json: { message: ctx.message }
       end
     end
 
     def sign_up
-      ctx = Usecases::SignUp.call(params: user_params, session: session)
+      ctx = Usecases::SignUp.call(params: user_params, session:)
 
       if ctx.success?
-        session = ctx.session
         render json: { message: 'ok' }
       else
-        render json: {message: ctx.message}
+        render json: { message: ctx.message }
       end
-
     end
 
     private

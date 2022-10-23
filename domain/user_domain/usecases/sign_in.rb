@@ -4,8 +4,8 @@ module UserDomain
       include InteractorTransactional
 
       organize Interactors::FindUserInteractor,
-                Interactors::PasswordVerificationInteractor,
-                Interactors::UpdateSessionInteractor
+               Interactors::PasswordVerificationInteractor,
+               Interactors::UpdateSessionInteractor
     end
   end
 end

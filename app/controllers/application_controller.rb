@@ -1,7 +1,7 @@
 class ApplicationController < ActionController::API
   rescue_from Exception, with: :handle_exception
   include ActionController::Cookies
-  
+
   private
 
   def handle_exception(e)

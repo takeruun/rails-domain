@@ -9,9 +9,8 @@ module TodoDomain
           context[:todo] = todo
         end
 
-        def rollback; end
-
-        private
+        def rollback
+        end
       end
     end
   end

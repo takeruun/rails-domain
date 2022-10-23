@@ -6,14 +6,13 @@ module UserDomain
 
         def call
           user = Models::User.find_by(email: params[:email])
-          
+
           if user.nil?
             context.fail!(message: 'ユーザーが見つかりません。')
           else
             context[:user] = user
           end
         end
-
       end
     end
   end
